@@ -24,7 +24,7 @@ public class StreamOperationsExercise {
 	getPlayerCountry(player);
 	findPlayer( player,"Polad");
 	getMaxRunsPlayer(player);
-	checkHighScorerByCountry(player ,"smith");
+	checkHighScorerByCountry(player ,"India");
 	}
 	
 	public static void displayPlayers(List<Player> player) {
@@ -61,7 +61,7 @@ public class StreamOperationsExercise {
 		  OptionalDouble average = getRuns.stream()
 				  .mapToInt(x1-> x1.intValue())
 				  .average();
-		  System.out.println("Average Runs of "+country+":"+average);
+		  System.out.println("Average Runs of "+country+":"+average.getAsDouble());
 	}
 	public static void getPlayerNamesSorted(List<Player> p){
 		List<String> PNS =p.stream()
@@ -82,7 +82,7 @@ public class StreamOperationsExercise {
 	public static void getMaxRunsPlayer(List<Player> p) {
         Player MaxRun = p.stream()
         		.max((p1,p2)->p1.getRuns() > p2.getRuns() ? 1:-1).get();
-        System.out.println("Maximum runs of"+p+MaxRun);
+        System.out.println("Maximum runs of"+MaxRun);
 	} 
 	public static void findPlayer(List<Player> p,String name) {
 		String FP = p.stream()
